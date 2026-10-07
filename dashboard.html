@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - DistribuMart</title>
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+
+<body>
+
+    <!-- DASHBOARD LAYOUT -->
+    <div class="dashboard-layout">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+
+            <!-- LOGO DISTRIBUMART -->
+            <div class="sidebar-brand">
+                <div class="logo">
+                    <img src="Bahan/Logo_Distribumart.png" alt="Logo DistribuMart">
+                    <div class="logo-text">
+                        <span>Distribu<span class="mart">Mart</span></span>
+                        <small>Harga Grosir</small>
+                    </div>
+                </div>
+            </div>
+
+            <!-- MENU SIDEBAR -->
+            <ul class="sidebar-menu">
+
+                <!-- Dashboard -->
+                <li>
+                    <a href="#" class="active">
+                        <img src="Bahan/Logo_Dashboard.png" alt="Dashboard">
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+
+                <!-- Katalog Produk -->
+                <li>
+                    <a href="#katalog-section">
+                        <img src="Bahan/logo_katalog.png" alt="Katalog Produk">
+                        <span>Katalog Produk</span>
+                    </a>
+                </li>
+
+                <!-- Pesanan Saya -->
+                <li>
+                    <a href="#pesanan-section">
+                        <img src="Bahan/logo_pesanan.png" alt="Pesanan Saya">
+                        <span>Pesanan Saya</span>
+                    </a>
+                </li>
+
+                <!-- Riwayat Transaksi -->
+                <li>
+                    <a href="#riwayat-section">
+                        <img src="Bahan/Logo_riwayat.png" alt="Riwayat Transaksi">
+                        <span>Riwayat Transaksi</span>
+                    </a>
+                </li>
+
+                <!-- Pengaturan -->
+                <li>
+                    <a href="#pengaturan-section">
+                        <img src="Bahan/Logo_Pengaturan.png" alt="Pengaturan">
+                        <span>Pengaturan</span>
+                    </a>
+                </li>
+
+                <!-- Keluar -->
+                <li class="logout-menu">
+                    <a href="login.html">
+                        <img src="Bahan/Logo_Keluar.png" alt="Keluar">
+                        <span>Keluar</span>
+                    </a>
+                </li>
+
+            </ul>
+        </aside>
+
+        <!-- MAIN CONTENT -->
+        <main class="main-content">
+
+            <!-- TOP BAR -->
+            <div class="top-bar">
+                <div>
+                    <h2>Selamat datang kembali, Panji!</h2>
+                    <p class="dashboard-subtitle">
+                        Toko Berkah Jaya • Member Reguler Wilayah Jakarta Barat
+                    </p>
+                </div>
+            </div>
+
+            <!-- STATISTIK -->
+            <div class="stats-grid">
+
+                <!-- Total Pesanan -->
+                <div class="stat-card">
+                    <h4>Total Pesanan</h4>
+                    <p>24 Pesanan</p>
+                </div>
+
+                <!-- Pesanan Diproses -->
+                <div class="stat-card">
+                    <h4>Pesanan Diproses</h4>
+                    <p>2 Pesanan</p>
+                </div>
+
+                <!-- Plafon Tempo -->
+                <div class="stat-card">
+                    <h4>Plafon Tempo Aktif</h4>
+                    <p class="credit-limit">Rp 15.000.000</p>
+                </div>
+
+            </div>
+
+            <!-- DATA 1 : KATALOG PRODUK -->
+            <section id="katalog-section" class="dashboard-section">
+
+                <h3 class="section-title">
+                    <img src="Bahan/logo_katalog.png" alt="Katalog Produk">
+                    <span>Data Katalog Produk</span>
+                </h3>
+
+                <!-- FORM PRODUK -->
+                <div class="crud-box">
+                    <h4>Form Input Produk Baru</h4>
+
+                    <form action="#" method="POST">
+                        <div class="form-grid">
+
+                            <!-- Nama Produk -->
+                            <div class="form-group">
+                                <label for="prod_name">Nama Produk</label>
+                                <input
+                                    type="text"
+                                    id="prod_name"
+                                    class="form-control"
+                                    placeholder="Misal: Beras Premium 5kg"
+                                    required
+                                >
+                            </div>
+
+                            <!-- Kategori -->
+                            <div class="form-group">
+                                <label for="prod_cat">Kategori Produk</label>
+                                <select id="prod_cat" class="form-control">
+                                    <option value="Sembako">Sembako</option>
+                                    <option value="Minyak & Bumbu">Minyak & Bumbu</option>
+                                    <option value="Makanan Instan">Makanan Instan</option>
+                                    <option value="Minuman">Minuman</option>
+                                </select>
+                            </div>
+
+                            <!-- Harga -->
+                            <div class="form-group">
+                                <label for="prod_price">Harga Grosir (Rp)</label>
+                                <input
+                                    type="number"
+                                    id="prod_price"
+                                    class="form-control"
+                                    placeholder="68500"
+                                    required
+                                >
+                            </div>
+
+                            <!-- Stok -->
+                            <div class="form-group">
+                                <label for="prod_stock">Status Stok</label>
+                                <input
+                                    type="text"
+                                    id="prod_stock"
+                                    class="form-control"
+                                    placeholder="Tersedia (>50)"
+                                    required
+                                >
+                            </div>
+
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-sm">
+                            Simpan Produk
+                        </button>
+                    </form>
+                </div>
+
+                <!-- DATA PRODUK -->
+                <div class="card-grid">
+
+                    <!-- PRODUK 1 -->
+                    <div class="product-card">
+                        <span class="badge badge-success">Sembako</span>
+                        <h4>Beras Premium Ramos 5 kg</h4>
+                        <p class="product-stock">Tersedia (>50)</p>
+                        <p class="product-price">Rp 68.500 / zak</p>
+
+                        <div class="product-actions">
+                            <a href="#" class="btn btn-outline btn-sm">Edit</a>
+                            <a href="#" class="btn btn-danger btn-sm">Hapus</a>
+                        </div>
+                    </div>
+
+                    <!-- PRODUK 2 -->
+                    <div class="product-card">
+                        <span class="badge badge-success">Minyak & Bumbu</span>
+                        <h4>Minyak Goreng Sania 2 L</h4>
+                        <p class="product-stock">Tersedia (>100)</p>
+                        <p class="product-price">Rp 32.000 / pouch</p>
+
+                        <div class="product-actions">
+                            <a href="#" class="btn btn-outline btn-sm">Edit</a>
+                            <a href="#" class="btn btn-danger btn-sm">Hapus</a>
+                        </div>
+                    </div>
+
+                    <!-- PRODUK 3 -->
+                    <div class="product-card">
+                        <span class="badge badge-success">Sembako</span>
+                        <h4>Gula Pasir Gulaku 1 kg</h4>
+                        <p class="product-stock">Tersedia</p>
+                        <p class="product-price">Rp 16.200 / bks</p>
+
+                        <div class="product-actions">
+                            <a href="#" class="btn btn-outline btn-sm">Edit</a>
+                            <a href="#" class="btn btn-danger btn-sm">Hapus</a>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- DATA 2 : PESANAN -->
+            <section id="pesanan-section" class="dashboard-section">
+
+                <h3 class="section-title">
+                    <img src="Bahan/logo_pesanan.png" alt="Pesanan Saya">
+                    <span>Data Pesanan Saya</span>
+                </h3>
+
+                <!-- FORM PESANAN -->
+                <div class="crud-box">
+                    <h4>Form Input Pesanan Baru</h4>
+
+                    <form action="#" method="POST">
+                        <div class="form-grid">
+
+                            <!-- Nomor Pesanan -->
+                            <div class="form-group">
+                                <label for="order_code">Nomor Pesanan</label>
+                                <input
+                                    type="text"
+                                    id="order_code"
+                                    class="form-control"
+                                    value="#ORD-2026-0090"
+                                    readonly
+                                >
+                            </div>
+
+                            <!-- Item Pesanan -->
+                            <div class="form-group">
+                                <label for="order_items">Item Pesanan</label>
+                                <input
+                                    type="text"
+                                    id="order_items"
+                                    class="form-control"
+                                    placeholder="Misal: Minyak Goreng 2L (2 ktn)"
+                                    required
+                                >
+                            </div>
+
+                            <!-- Total Harga -->
+                            <div class="form-group">
+                                <label for="order_total">Total Harga (Rp)</label>
+                                <input
+                                    type="number"
+                                    id="order_total"
+                                    class="form-control"
+                                    placeholder="406500"
+                                    required
+                                >
+                            </div>
+
+                            <!-- Status -->
+                            <div class="form-group">
+                                <label for="order_status">Status Pesanan</label>
+                                <select id="order_status" class="form-control">
+                                    <option value="Diproses">Diproses</option>
+                                    <option value="Dikirim">Dikirim</option>
+                                    <option value="Selesai">Selesai</option>
+                                </select>
+                            </div>
+
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-sm">
+                            Tambah Pesanan
+                        </button>
+                    </form>
+                </div>
+
+                <!-- TABEL PESANAN -->
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Nomor Pesanan</th>
+                                <th>Tanggal</th>
+                                <th>Item Pesanan</th>
+                                <th>Total Harga</th>
+                                <th>Status</th>
+                                <th>Aksi</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+
+                            <!-- PESANAN 1 -->
+                            <tr>
+                                <td><strong>#ORD-2026-0089</strong></td>
+                                <td>24 Okt 2026, 09:30</td>
+                                <td>Minyak Goreng 2L (2 ktn), Beras 5kg (5 zak)</td>
+                                <td>Rp 406.500</td>
+                                <td>
+                                    <span class="badge badge-warning">Diproses</span>
+                                </td>
+                                <td>
+                                    <a href="#" class="btn btn-outline btn-sm">Edit</a>
+                                    <a href="#" class="btn btn-danger btn-sm">Hapus</a>
+                                </td>
+                            </tr>
+
+                            <!-- PESANAN 2 -->
+                            <tr>
+                                <td><strong>#ORD-2026-0088</strong></td>
+                                <td>22 Okt 2026, 14:15</td>
+                                <td>Indomie Goreng (3 dus), Gula 1kg (20 bks)</td>
+                                <td>Rp 660.000</td>
+                                <td>
+                                    <span class="badge badge-warning">Dikirim</span>
+                                </td>
+                                <td>
+                                    <a href="#" class="btn btn-outline btn-sm">Edit</a>
+                                    <a href="#" class="btn btn-danger btn-sm">Hapus</a>
+                                </td>
+                            </tr>
+
+                            <!-- PESANAN 3 -->
+                            <tr>
+                                <td><strong>#ORD-2026-0085</strong></td>
+                                <td>18 Okt 2026, 11:00</td>
+                                <td>Kopi Sachet (5 renceng), Teh Celup (10 box)</td>
+                                <td>Rp 185.000</td>
+                                <td>
+                                    <span class="badge badge-success">Selesai</span>
+                                </td>
+                                <td>
+                                    <a href="#" class="btn btn-outline btn-sm">Edit</a>
+                                    <a href="#" class="btn btn-danger btn-sm">Hapus</a>
+                                </td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- RIWAYAT TRANSAKSI -->
+            <section id="riwayat-section" class="dashboard-section">
+
+                <h3 class="section-title">
+                    <img src="Bahan/Logo_riwayat.png" alt="Riwayat Transaksi">
+                    <span>Riwayat Transaksi</span>
+                </h3>
+
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>ID Transaksi</th>
+                                <th>Tanggal</th>
+                                <th>Jenis Transaksi</th>
+                                <th>Total</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+
+                            <tr>
+                                <td><strong>#TRX-2026-0089</strong></td>
+                                <td>24 Okt 2026</td>
+                                <td>Pembelian Produk Grosir</td>
+                                <td>Rp 406.500</td>
+                                <td>
+                                    <span class="badge badge-warning">Diproses</span>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td><strong>#TRX-2026-0088</strong></td>
+                                <td>22 Okt 2026</td>
+                                <td>Pembelian Produk Grosir</td>
+                                <td>Rp 660.000</td>
+                                <td>
+                                    <span class="badge badge-warning">Dikirim</span>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td><strong>#TRX-2026-0085</strong></td>
+                                <td>18 Okt 2026</td>
+                                <td>Pembelian Produk Grosir</td>
+                                <td>Rp 185.000</td>
+                                <td>
+                                    <span class="badge badge-success">Selesai</span>
+                                </td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- PENGATURAN -->
+            <section id="pengaturan-section" class="dashboard-section">
+
+                <h3 class="section-title">
+                    <img src="Bahan/Logo_Pengaturan.png" alt="Pengaturan">
+                    <span>Pengaturan Akun</span>
+                </h3>
+
+                <div class="crud-box">
+                    <h4>Informasi Toko</h4>
+
+                    <div class="form-grid">
+
+                        <!-- Nama Toko -->
+                        <div class="form-group">
+                            <label for="store_name">Nama Toko</label>
+                            <input
+                                type="text"
+                                id="store_name"
+                                class="form-control"
+                                value="Toko Berkah Jaya"
+                            >
+                        </div>
+
+                        <!-- Nama Pemilik -->
+                        <div class="form-group">
+                            <label for="owner_name">Nama Pemilik</label>
+                            <input
+                                type="text"
+                                id="owner_name"
+                                class="form-control"
+                                value="Panji"
+                            >
+                        </div>
+
+                        <!-- WhatsApp -->
+                        <div class="form-group">
+                            <label for="store_phone">Nomor WhatsApp</label>
+                            <input
+                                type="tel"
+                                id="store_phone"
+                                class="form-control"
+                                value="0838-3484-0870"
+                            >
+                        </div>
+
+                        <!-- Email -->
+                        <div class="form-group">
+                            <label for="store_email">Email</label>
+                            <input
+                                type="email"
+                                id="store_email"
+                                class="form-control"
+                                value="pusat@distribumart.id"
+                            >
+                        </div>
+
+                    </div>
+
+                    <button type="button" class="btn btn-primary btn-sm">
+                        Simpan Pengaturan
+                    </button>
+                </div>
+
+            </section>
+
+        </main>
+    </div>
+
+</body>
+</html>

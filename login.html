@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - DistribuMart</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="logo">
+            <img src="Bahan/Logo_Distribumart.png" alt="Logo DistribuMart">
+            <div class="logo-text">
+                <span>Distribu<span class="mart">Mart</span></span>
+                <small>Harga Grosir</small>
+            </div>
+        </div>
+
+        <div class="auth-buttons">
+            <a href="register.html" class="btn btn-primary">Daftar</a>
+        </div>
+    </nav>
+
+    <!-- LOGIN FORM -->
+    <main class="auth-container">
+
+        <!-- HEADER LOGIN -->
+        <div class="auth-header">
+            <h2>Selamat Datang Kembali</h2>
+            <p class="auth-description">
+                Masuk untuk melanjutkan belanja grosir toko Anda
+            </p>
+        </div>
+
+        <!-- FORM LOGIN -->
+        <form action="dashboard.html" method="GET">
+
+            <!-- EMAIL / NOMOR HANDPHONE -->
+            <div class="form-group">
+                <label for="email">Alamat Email atau No. Handphone</label>
+                <input
+                    type="text"
+                    id="email"
+                    name="email"
+                    class="form-control"
+                    placeholder="contoh: budi@warungberkah.com"
+                    required
+                >
+            </div>
+
+            <!-- PASSWORD -->
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input
+                    type="password"
+                    id="password"
+                    name="password"
+                    class="form-control"
+                    placeholder="Masukkan password Anda"
+                    required
+                >
+            </div>
+
+            <!-- DEMO ACCOUNT -->
+            <div class="demo-box">
+                <strong>Akses Uji Coba Demo:</strong>
+                <br>
+                <small>budi@warungberkah.com / password123</small>
+            </div>
+
+            <!-- TOMBOL LOGIN -->
+            <button type="submit" class="btn btn-primary login-button">
+                Masuk ke Akun Toko →
+            </button>
+        </form>
+
+        <!-- LINK REGISTER -->
+        <p class="register-link">
+            Belum punya akun mitra?
+            <a href="register.html">Daftar sekarang</a>
+        </p>
+
+    </main>
+
+</body>
+</html>
+```

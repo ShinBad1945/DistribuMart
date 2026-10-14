@@ -21,7 +21,7 @@
         <ul class="nav-links">
             <li><a href="index.html" class="active">Beranda</a></li>
             <li><a href="#">Katalog Produk</a></li>
-            <li><a href="#">Tentang Kami</a></li>
+            <li><a href="#" id="aboutLink">Tentang Kami</a></li>
         </ul>
 
         <div class="auth-buttons">
@@ -59,10 +59,10 @@
                 </span>
             </div>
 
-            <a href="#" class="search-button">
-                Cari Produk
-                <span>→</span>
-            </a>
+           <button type="button" id="searchButton" class="search-button">
+    Cari Produk
+    <span>→</span>
+</button>
         </div>
 
         <!-- HERO BUTTONS -->
@@ -72,10 +72,10 @@
                 <span>🛒</span>
             </a>
 
-            <a href="#" class="hero-btn hero-btn-secondary">
-                <span>▦</span>
-                Lihat Katalog
-            </a>
+            <button type="button" id="catalogButton" class="hero-btn hero-btn-secondary">
+    <span>=</span>
+    Lihat Katalog
+</button>
         </div>
     </main>
 
@@ -160,6 +160,8 @@
         </p>
     </footer>
 
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+<script src="script.js"></script>
 </body>
 </html>
-```
+

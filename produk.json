@@ -1,0 +1,23 @@
+
+[
+  {
+    "title": "Beras Premium 5 Kg",
+    "price": 68500,
+    "category": "sembako"
+  },
+  {
+    "title": "Minyak Goreng 2 L",
+    "price": 32000,
+    "category": "minyak"
+  },
+  {
+    "title": "Gula Pasir 1 Kg",
+    "price": 16200,
+    "category": "sembako"
+  },
+  {
+    "title": "Mi Instan 1 Dus (40 bks)",
+    "price": 112000,
+    "category": "makanan"
+  }
+]

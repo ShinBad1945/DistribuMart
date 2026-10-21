@@ -417,3 +417,495 @@ footer{
     font-family: inherit;
     cursor: pointer;
 }
+
+/* Input pencarian produk */
+.home-page .search-placeholder {
+    flex: 1;
+    width: 100%;
+    min-width: 0;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: #333333;
+    font-family: inherit;
+    font-size: 14px;
+}
+
+/* Tampilan teks petunjuk pencarian */
+.home-page .search-placeholder::placeholder {
+    color: #7b858d;
+    opacity: 1;
+}
+
+/* Area hasil pencarian produk */
+.home-page #productResults {
+    width: 100%;
+    max-width: 770px;
+    margin: 20px auto;
+}
+
+/* AREA HASIL PENCARIAN DAN KATALOG */
+.home-page #productResults {
+    width: 100%;
+    max-width: 770px;
+    margin: 24px auto;
+    text-align: left;
+}
+
+.home-page #productResults h2 {
+    margin-bottom: 16px;
+    color: var(--primary-color);
+    font-size: 22px;
+}
+
+/* Kartu produk yang dibuat melalui JavaScript */
+.home-page .product-card {
+    margin-bottom: 12px;
+    padding: 16px;
+    background: #ffffff;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.04);
+}
+
+.home-page .product-card h3 {
+    margin-bottom: 6px;
+    font-size: 16px;
+    color: var(--text-dark);
+}
+
+.home-page .product-card p {
+    font-size: 14px;
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+/* Input pencarian yang bisa diketik */
+.home-page input.search-placeholder {
+    flex: 1;
+    width: 100%;
+    min-width: 0;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: var(--text-dark);
+    font-size: 14px;
+}
+
+.home-page input.search-placeholder::placeholder {
+    color: #7b858d;
+    opacity: 1;
+}
+
+
+/* =========================================
+   BAGIAN TENTANG KAMI
+   ========================================= */
+
+.home-page .about-section {
+    padding: 64px 5%;
+    margin-top: 36px;
+    background: #ffffff;
+    border-top: 1px solid var(--border-color);
+}
+
+.home-page .about-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 48px;
+}
+
+/* Foto Tentang Kami */
+.home-page .about-image {
+    width: 100%;
+    height: 360px;
+    overflow: hidden;
+    border-radius: 16px;
+    background: var(--primary-light);
+}
+
+.home-page .about-image img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+/* Teks Tentang Kami */
+.home-page .about-label {
+    display: inline-block;
+    margin-bottom: 12px;
+    color: var(--accent-color);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+
+.home-page .about-content h2 {
+    margin-bottom: 18px;
+    color: var(--text-dark);
+    font-size: 32px;
+    line-height: 1.3;
+}
+
+.home-page .about-content h2 span {
+    color: var(--primary-color);
+}
+
+.home-page .about-content > p {
+    margin-bottom: 14px;
+    color: var(--text-muted);
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+/* Daftar keunggulan */
+.home-page .about-points {
+    display: grid;
+    gap: 13px;
+    margin: 22px 0;
+}
+
+.home-page .about-point {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    color: var(--text-dark);
+    font-size: 13px;
+}
+
+.home-page .about-check {
+    display: inline-flex;
+    flex-shrink: 0;
+    width: 22px;
+    height: 22px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #d9f5ed;
+    color: #087f69;
+    font-weight: 700;
+}
+
+/* Tombol Tentang Kami */
+.home-page .about-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 4px;
+    padding: 12px 18px;
+    border-radius: 7px;
+    background: var(--primary-color);
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: 600;
+    transition: background 0.2s ease;
+}
+
+.home-page .about-button:hover {
+    background: var(--primary-dark);
+}
+
+/* ==========================================
+   KEUNGGULAN DISTRIBUMART UNTUK WARUNG
+   ========================================== */
+
+.home-page .benefits-section {
+    padding: 30px 4% 26px;
+    background: #f7f8fa;
+}
+
+.home-page .section-heading.centered {
+    text-align: center;
+    margin-bottom: 22px;
+}
+
+.home-page .section-heading h2 {
+    color: #20252a;
+    font-size: 26px;
+    line-height: 1.3;
+}
+
+.home-page .section-heading p {
+    margin-top: 6px;
+    color: #68737c;
+    font-size: 13px;
+}
+
+.home-page .benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.home-page .benefit-card {
+    padding: 22px;
+    background: #ffffff;
+    border: 1px solid #edf0f2;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(20, 40, 50, 0.025);
+}
+
+.home-page .benefit-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    margin-bottom: 14px;
+    border-radius: 10px;
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.home-page .icon-blue {
+    color: #08769a;
+    background: #c7eaff;
+}
+
+.home-page .icon-green {
+    color: #087b70;
+    background: #bff5e9;
+}
+
+.home-page .benefit-card h3 {
+    margin-bottom: 9px;
+    color: #20252a;
+    font-size: 16px;
+}
+
+.home-page .benefit-card p {
+    min-height: 65px;
+    margin-bottom: 14px;
+    color: #667085;
+    font-size: 12px;
+    line-height: 1.65;
+}
+
+.home-page .benefit-card a {
+    color: #00677d;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.home-page .benefit-card a:hover {
+    text-decoration: underline;
+}
+
+
+/* ==========================================
+   PRODUK UNGGULAN GROSIR
+   ========================================== */
+
+.home-page .featured-section {
+    padding: 30px 4% 38px;
+    background: #f0f2f4;
+}
+
+.home-page .featured-header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 20px;
+    max-width: 1400px;
+    margin: 0 auto 18px;
+}
+
+.home-page .section-label {
+    color: #007187;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.home-page .featured-header h2 {
+    margin-top: 3px;
+    color: #20252a;
+    font-size: 26px;
+}
+
+.home-page .featured-header p {
+    color: #68737c;
+    font-size: 12px;
+}
+
+.home-page .update-label {
+    padding-bottom: 5px;
+    color: #68737c;
+    font-size: 11px;
+}
+
+.home-page .category-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 9px;
+    max-width: 1400px;
+    margin: 0 auto 20px;
+}
+
+.home-page .category-btn {
+    padding: 8px 14px;
+    border: 1px solid #e6e9ec;
+    border-radius: 20px;
+    background: #ffffff;
+    color: #343e45;
+    font-size: 11px;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.home-page .category-btn:hover,
+.home-page .category-btn.active {
+    border-color: #00566b;
+    background: #00566b;
+    color: #ffffff;
+}
+
+.home-page .products-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 16px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.home-page .product-card {
+    min-width: 0;
+    padding: 12px;
+    overflow: hidden;
+    border: 1px solid #edf0f2;
+    border-radius: 11px;
+    background: #ffffff;
+    box-shadow: 0 2px 8px rgba(20, 40, 50, 0.025);
+}
+
+.home-page .product-image {
+    position: relative;
+    height: 205px;
+    overflow: hidden;
+    border-radius: 7px;
+    background: #e9ecef;
+}
+
+.home-page .product-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.25s ease;
+}
+
+.home-page .product-card:hover .product-image img {
+    transform: scale(1.04);
+}
+
+.home-page .product-badge {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    z-index: 1;
+    padding: 4px 7px;
+    border-radius: 3px;
+    background: #00566b;
+    color: #ffffff;
+    font-size: 9px;
+    font-weight: 600;
+}
+
+.home-page .badge-green {
+    background: #008878;
+}
+
+.home-page .badge-orange {
+    background: #c77922;
+}
+
+.home-page .badge-red {
+    background: #c94343;
+}
+
+.home-page .product-info {
+    padding-top: 12px;
+}
+
+.home-page .product-category {
+    display: block;
+    margin-bottom: 5px;
+    color: #007187;
+    font-size: 10px;
+    font-weight: 700;
+}
+
+.home-page .product-info h3 {
+    min-height: 22px;
+    color: #20252a;
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+.home-page .product-description {
+    min-height: 18px;
+    margin-top: 4px;
+    color: #68737c;
+    font-size: 10px;
+}
+
+.home-page .old-price {
+    margin-top: 9px;
+    color: #8b9298;
+    font-size: 10px;
+    text-decoration: line-through;
+}
+
+.home-page .price-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 1px;
+}
+
+.home-page .price-row strong {
+    color: #00566b;
+    font-size: 17px;
+}
+
+.home-page .discount {
+    padding: 3px 5px;
+    border-radius: 4px;
+    background: #ffe5e5;
+    color: #bd3030;
+    font-size: 9px;
+    font-weight: 700;
+}
+
+.home-page .detail-button {
+    width: 100%;
+    margin-top: 12px;
+    padding: 10px 8px;
+    border: none;
+    border-radius: 6px;
+    background: #edf0f2;
+    color: #00566b;
+    font-family: inherit;
+    font-size: 11px;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.home-page .detail-button:hover {
+    background: #dcecf0;
+}
+/* Desktop: tiga kartu */
+.home-page .benefits-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+/* Desktop: empat kartu produk dalam satu baris */
+.home-page .products-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+}

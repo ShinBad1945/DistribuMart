@@ -6,7 +6,7 @@
     <title>DistribuMart - Belanja Grosir Online</title>
     <link rel="stylesheet" href="index.css">
 </head>
-<body class="home-page">
+<body class="home-page" id="top">
 
     <!-- NAVBAR -->
     <nav class="navbar">
@@ -20,8 +20,8 @@
 
         <ul class="nav-links">
             <li><a href="index.html" class="active">Beranda</a></li>
-            <li><a href="#">Katalog Produk</a></li>
-            <li><a href="#" id="aboutLink">Tentang Kami</a></li>
+           <li><a href="#produk-unggulan">Katalog Produk</a></li>
+            <li><a href="#tentang-kami" id="aboutLink">Tentang Kami</a></li>
         </ul>
 
         <div class="auth-buttons">
@@ -50,20 +50,30 @@
         </p>
 
         <!-- SEARCH BAR -->
-        <div class="hero-search">
-            <div class="search-input">
-                <span class="search-icon">⌕</span>
-                <span class="search-placeholder">
-                    Cari produk yang kamu butuhkan
-                    (contoh: minyak goreng, beras, mi instan)...
-                </span>
-            </div>
+        
+<!-- SEARCH BAR -->
+<div class="hero-search">
+    <div class="search-input">
+        <span class="search-icon">⌕</span>
 
-           <button type="button" id="searchButton" class="search-button">
-    Cari Produk
-    <span>→</span>
-</button>
-        </div>
+        <!-- Input untuk mencari produk -->
+        <input
+            type="text"
+            id="productSearch"
+            class="search-placeholder"
+            placeholder="Cari produk, misalnya beras atau minyak goreng..."
+            aria-label="Cari produk"
+        >
+    </div>
+
+    <button type="button" id="searchButton" class="search-button">
+        Cari Produk
+        <span>→</span>
+    </button>
+</div>
+
+<!-- Tempat menampilkan hasil pencarian dari API -->
+<section id="productResults" aria-live="polite"></section>
 
         <!-- HERO BUTTONS -->
         <div class="hero-buttons">
@@ -113,9 +123,176 @@
             </div>
         </div>
     </section>
+<!-- KEUNGGULAN DISTRIBUMART UNTUK WARUNG -->
+<section class="benefits-section" id="keunggulan">
+    <div class="section-heading centered">
+        <h2>Keunggulan DistribuMart untuk Warung</h2>
+        <p>Dukungan komprehensif agar operasional warung lebih praktis dan margin keuntungan berlipat ganda.</p>
+    </div>
+
+    <div class="benefits-grid">
+        <article class="benefit-card">
+            <div class="benefit-icon icon-blue">↗</div>
+            <h3>Harga Grosir Transparan</h3>
+            <p>
+                Tanpa biaya tersembunyi. Dapatkan potongan bertingkat
+                semakin banyak karton yang dipesan sehingga warung Anda
+                dapat menjual dengan laba maksimal.
+            </p>
+            <a href="#produk-unggulan">Lihat Skema Harga ›</a>
+        </article>
+
+        <article class="benefit-card">
+            <div class="benefit-icon icon-green">♟</div>
+            <h3>Pesan Praktis via Web</h3>
+            <p>
+                Tinggalkan cara lama melakukan pesan berulang yang
+                melelahkan. Cukup beberapa ketukan di layar ponsel
+                kapan saja, barang segera disiapkan.
+            </p>
+            <a href="register.html">Pelajari Kemudahan Pesanan ›</a>
+        </article>
+
+        <article class="benefit-card">
+            <div class="benefit-icon icon-blue">➜</div>
+            <h3>Gratis Ongkir & Pengiriman Terjadwal</h3>
+            <p>
+                Pengiriman terintegrasi langsung diantar sampai depan
+                pintu warung Anda setiap pagi. Bebas biaya kirim dengan
+                syarat pembelanjaan tertentu.
+            </p>
+            <a href="#produk-unggulan">Cek Informasi Pengiriman ›</a>
+        </article>
+    </div>
+</section>
+
+
+<!-- PRODUK UNGGULAN GROSIR -->
+<section class="featured-section" id="produk-unggulan">
+    <div class="featured-header">
+        <div>
+            <span class="section-label">KATALOG PILIHAN</span>
+            <h2>Produk Unggulan Grosir</h2>
+            <p>Harga distributor terbaik untuk kebutuhan harian warung Anda</p>
+        </div>
+
+        <span class="update-label">Pilihan produk DistribuMart</span>
+    </div>
+
+    <!-- Filter kategori produk -->
+    <div class="category-filters">
+        <button type="button" class="category-btn active"
+                data-category="semua">Semua Produk</button>
+        <button type="button" class="category-btn"
+                data-category="sembako">Sembako</button>
+        <button type="button" class="category-btn"
+                data-category="minyak">Minyak & Bumbu</button>
+        <button type="button" class="category-btn"
+                data-category="makanan">Makanan Instan</button>
+        <button type="button" class="category-btn"
+                data-category="minuman">Minuman</button>
+    </div>
+
+    <!-- Daftar kartu produk -->
+    <div class="products-grid">
+
+        <!-- PRODUK 1: Ganti gambar dengan foto produk milikmu -->
+        <article class="product-card" data-category="sembako">
+            <div class="product-image">
+                <span class="product-badge">Terlaris</span>
+                <img src="Bahan/produk-1.jpg"
+                     alt="Beras premium 5 kg">
+            </div>
+            <div class="product-info">
+                <span class="product-category">SEMBAKO POKOK</span>
+                <h3>Beras Premium 5 Kg</h3>
+                <p class="product-description">Min. Pembelian: 1 karton/pak</p>
+                <p class="old-price">Rp 76.000</p>
+                <div class="price-row">
+                    <strong>Rp 68.500</strong>
+                    <span class="discount">-8%</span>
+                </div>
+                <button class="detail-button" type="button"
+                        data-product="Beras Premium 5 Kg">
+                    Lihat Detail ⊙
+                </button>
+            </div>
+        </article>
+
+        <!-- PRODUK 2 -->
+        <article class="product-card" data-category="minyak">
+            <div class="product-image">
+                <span class="product-badge badge-green">Harga Pabrik</span>
+                <img src="Bahan/produk-2.jpg"
+                     alt="Minyak goreng kemasan 2 liter">
+            </div>
+            <div class="product-info">
+                <span class="product-category">MINYAK & BUMBU</span>
+                <h3>Minyak Goreng 2 L</h3>
+                <p class="product-description">Min. Pembelian: 1 karton (6 pcs)</p>
+                <p class="old-price">Rp 36.500</p>
+                <div class="price-row">
+                    <strong>Rp 32.000</strong>
+                    <span class="discount">-12%</span>
+                </div>
+                <button class="detail-button" type="button"
+                        data-product="Minyak Goreng 2 L">
+                    Lihat Detail ⊙
+                </button>
+            </div>
+        </article>
+
+        <!-- PRODUK 3 -->
+        <article class="product-card" data-category="sembako">
+            <div class="product-image">
+                <span class="product-badge badge-orange">Hemat</span>
+                <img src="Bahan/produk-3.jpg"
+                     alt="Gula pasir 1 kg">
+            </div>
+            <div class="product-info">
+                <span class="product-category">SEMBAKO POKOK</span>
+                <h3>Gula Pasir 1 Kg</h3>
+                <p class="product-description">Min. Pembelian: 10 bungkus</p>
+                <p class="old-price">Rp 18.000</p>
+                <div class="price-row">
+                    <strong>Rp 16.200</strong>
+                    <span class="discount">-10%</span>
+                </div>
+                <button class="detail-button" type="button"
+                        data-product="Gula Pasir 1 Kg">
+                    Lihat Detail ⊙
+                </button>
+            </div>
+        </article>
+
+        <!-- PRODUK 4 -->
+        <article class="product-card" data-category="makanan">
+            <div class="product-image">
+                <span class="product-badge badge-red">Promo Spesial</span>
+                <img src="Bahan/produk-4.jpg"
+                     alt="Mi instan satu dus">
+            </div>
+            <div class="product-info">
+                <span class="product-category">MAKANAN INSTAN</span>
+                <h3>Mi Instan 1 Dus (40 bks)</h3>
+                <p class="product-description">Min. Pembelian: 1 dus</p>
+                <p class="old-price">Rp 124.000</p>
+                <div class="price-row">
+                    <strong>Rp 112.000</strong>
+                    <span class="discount">-10%</span>
+                </div>
+                <button class="detail-button" type="button"
+                        data-product="Mi Instan 1 Dus (40 bks)">
+                    Lihat Detail ⊙
+                </button>
+            </div>
+        </article>
+
+    </div>
+</section>
 
     <!-- FOOTER -->
-    <footer>
+    <footer id="tentang-kami">
         <div class="footer-grid">
             <div>
                 <div class="logo footer-logo">

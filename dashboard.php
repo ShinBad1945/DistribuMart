@@ -1,3 +1,109 @@
+<?php
+session_start();
+
+// Memeriksa session login
+if (!isset($_SESSION["nama_pengguna"])) {
+    header("Location: login.php");
+    exit;
+}
+
+// Mengambil data pengguna
+$namaPengguna = $_SESSION["nama_pengguna"];
+$namaToko = $_SESSION["nama_toko"] ?? "Member DistribuMart";
+
+// Menyiapkan variabel
+$errors = [];
+$hasil = null;
+
+$namaProduk = "";
+$jumlahInput = "";
+$hargaInput = "";
+
+$jumlah = 0;
+$harga = 0;
+
+
+// FUNCTION MENGHITUNG TOTAL HARGA
+function hitungTotal($jumlah, $harga) {
+
+    $total = $jumlah * $harga;
+
+    if ($total > 100000) {
+        $diskon = $total * 0.10;
+    } else {
+        $diskon = 0;
+    }
+
+    $totalBayar = $total - $diskon;
+
+    return [
+        "total" => $total,
+        "diskon" => $diskon,
+        "totalBayar" => $totalBayar
+    ];
+}
+
+
+// PROSES FORM PEMESANAN
+if (
+    $_SERVER["REQUEST_METHOD"] == "POST" &&
+    ($_POST["aksi"] ?? "") == "hitung_pesanan"
+) {
+
+    $namaProduk = trim($_POST["nama_produk"] ?? "");
+    $jumlahInput = trim($_POST["jumlah"] ?? "");
+    $hargaInput = trim($_POST["harga"] ?? "");
+
+
+    // VALIDASI NAMA PRODUK
+    if (empty($namaProduk)) {
+        $errors[] = "Nama produk wajib diisi.";
+    }
+
+
+    // VALIDASI JUMLAH
+    if ($jumlahInput === "") {
+
+        $errors[] = "Jumlah barang wajib diisi.";
+
+    } elseif (
+        filter_var($jumlahInput, FILTER_VALIDATE_INT) === false ||
+        (int)$jumlahInput <= 0
+    ) {
+
+        $errors[] = "Jumlah harus lebih dari nol.";
+    }
+
+
+    // VALIDASI HARGA
+    if ($hargaInput === "") {
+
+        $errors[] = "Harga barang wajib diisi.";
+
+    } elseif (
+        !is_numeric($hargaInput) ||
+        !is_finite((float)$hargaInput) ||
+        (float)$hargaInput <= 0
+    ) {
+
+        $errors[] = "Harga harus lebih dari nol.";
+    }
+
+
+    // JIKA SEMUA DATA VALID
+    if (empty($errors)) {
+
+        $jumlah = (int)$jumlahInput;
+        $harga = (float)$hargaInput;
+
+        // Memanggil function
+        $hasil = hitungTotal($jumlah, $harga);
+
+    }
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -71,7 +177,7 @@
 
                 <!-- Keluar -->
                 <li class="logout-menu">
-                    <a href="login.html">
+                    <a href="login.php">
                         <img src="Bahan/Logo_Keluar.png" alt="Keluar">
                         <span>Keluar</span>
                     </a>
@@ -86,11 +192,18 @@
             <!-- TOP BAR -->
             <div class="top-bar">
                 <div>
-                    <h2>Selamat datang kembali, Panji!</h2>
+                    <h2>
+                        Selamat datang kembali,
+                        <?= htmlspecialchars($namaPengguna) ?>!
+                    </h2>
                     <p class="dashboard-subtitle">
-                        Toko Berkah Jaya • Member Reguler Wilayah Jakarta Barat
+                        <?= htmlspecialchars($namaToko) ?>
+                        • Member DistribuMart
                     </p>
                 </div>
+                <a href="form_pemesanan.php" class="btn btn-primary">
+                Form Pemesanan Produk
+                </a>
             </div>
 
             <!-- STATISTIK -->
@@ -239,12 +352,108 @@
                     <span>Data Pesanan Saya</span>
                 </h3>
 
-                <!-- FORM PESANAN -->
-                <div class="crud-box">
-                    <h4>Form Input Pesanan Baru</h4>
+                <!-- FORM PESANAN BARU -->
+<div class="crud-box">
 
-                    <form action="#" method="POST">
-                        <div class="form-grid">
+    <h4>Form Input Pesanan Baru</h4>
+
+    <p class="form-description">
+        Silakan masukkan produk yang ingin dipesan.
+    </p>
+
+    <form action="dashboard.php#pesanan-section" method="POST">
+
+        <input
+            type="hidden"
+            name="aksi"
+            value="hitung_pesanan"
+        >
+
+        <div class="form-grid">
+
+            <!-- Nama Pemesan -->
+            <div class="form-group">
+                <label for="nama_pemesan">
+                    Nama Pemesan
+                </label>
+
+                <input
+                    type="text"
+                    id="nama_pemesan"
+                    class="form-control"
+                    value="<?= htmlspecialchars($namaPengguna) ?>"
+                    readonly
+                    required
+                >
+            </div>
+
+
+            <!-- Nama Produk -->
+            <div class="form-group">
+                <label for="nama_produk">
+                    Nama Produk
+                </label>
+
+                <input
+                    type="text"
+                    id="nama_produk"
+                    name="nama_produk"
+                    class="form-control"
+                    value="<?= htmlspecialchars($namaProduk) ?>"
+                    placeholder="Misal: Beras Premium 5kg"
+                    required
+                >
+            </div>
+
+
+            <!-- Jumlah -->
+            <div class="form-group">
+                <label for="jumlah">
+                    Jumlah Barang
+                </label>
+
+                <input
+                    type="number"
+                    id="jumlah"
+                    name="jumlah"
+                    class="form-control"
+                    value="<?= htmlspecialchars($jumlahInput) ?>"
+                    placeholder="Masukkan jumlah"
+                    min="1"
+                    step="1"
+                    required
+                >
+            </div>
+
+
+            <!-- Harga -->
+            <div class="form-group">
+                <label for="harga">
+                    Harga Satuan (Rp)
+                </label>
+
+                <input
+                    type="number"
+                    id="harga"
+                    name="harga"
+                    class="form-control"
+                    value="<?= htmlspecialchars($hargaInput) ?>"
+                    placeholder="Contoh: 50000"
+                    min="0.01"
+                    step="any"
+                    required
+                >
+            </div>
+
+        </div>
+
+        <button type="submit" class="btn btn-primary">
+            Hitung Total Harga
+        </button>
+
+    </form>
+
+</div>
 
                             <!-- Nomor Pesanan -->
                             <div class="form-group">

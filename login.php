@@ -1,3 +1,27 @@
+<?php
+session_start();
+
+$error = "";
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
+    $email = trim($_POST["email"] ?? "");
+    $password = trim($_POST["password"] ?? "");
+
+    if (empty($email) || empty($password)) {
+
+        $error = "Email dan password wajib diisi!";
+
+    } else {
+
+        // Menyimpan identitas pengguna ke session
+        $_SESSION["nama_pengguna"] = $email;
+
+        header("Location: dashboard.php");
+        exit;
+    }
+}
+?>
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -20,7 +44,7 @@
         </div>
 
         <div class="auth-buttons">
-            <a href="register.html" class="btn btn-primary">Daftar</a>
+            <a href="register.php" class="btn btn-primary">Daftar</a>
         </div>
     </nav>
 
@@ -36,8 +60,10 @@
         </div>
 
         <!-- FORM LOGIN -->
-        <form action="dashboard.html" method="GET">
-
+        <?php if (!empty($error)) : ?>
+            <p><?= htmlspecialchars($error) ?></p>
+        <?php endif; ?>
+        <form action="login.php" method="POST">
             <!-- EMAIL / NOMOR HANDPHONE -->
             <div class="form-group">
                 <label for="email">Alamat Email atau No. Handphone</label>
@@ -80,7 +106,7 @@
         <!-- LINK REGISTER -->
         <p class="register-link">
             Belum punya akun mitra?
-            <a href="register.html">Daftar sekarang</a>
+            <a href="register.php">Daftar sekarang</a>
         </p>
 
     </main>

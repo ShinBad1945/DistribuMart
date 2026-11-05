@@ -407,3 +407,29 @@ th{
     color:var(--text-muted);
     font-weight:600;
 }
+/* FORM PEMESANAN */
+.form-description {
+    color: var(--text-muted);
+    font-size: 13px;
+    margin-bottom: 18px;
+}
+
+/* VALIDASI ERROR */
+.validation-errors {
+    background: #fef3f2;
+    color: var(--danger);
+    padding: 16px 20px;
+    border-radius: var(--radius-md);
+    border: 1px solid #fecdca;
+    margin-bottom: 24px;
+    font-size: 14px;
+}
+
+.validation-errors ul {
+    margin: 8px 0 0 20px;
+}
+
+/* HASIL PERHITUNGAN */
+.crud-box .table-container {
+    margin-bottom: 0;
+}
